@@ -6,6 +6,7 @@ if (FALSE) {
 }
 
 # Set up handles to database tables on app start
+# Shiny usage
 db <- src_sqlite("movies.db")
 omdb <- tbl(db, "omdb")
 tomatoes <- tbl(db, "tomatoes")
@@ -26,8 +27,7 @@ function(input, output, session) {
     # Due to dplyr issue #318, we need temp variables for input values
     minreviews <- input$reviews[1]
     maxreviews <- input$reviews[2]
-    minoscars <- input$oscars[1]
-    maxoscars <- input$oscars[2]
+    oscars <- input$oscars
     minyear <- input$year[1]
     maxyear <- input$year[2]
     minboxoffice <- input$boxoffice[1] * 1e6
@@ -37,8 +37,7 @@ function(input, output, session) {
     m <- all_movies %>%
       filter(
         Reviews >= reviews,
-        Oscars >= minoscars,
-        Oscars <= maxoscars,
+        Oscars >= oscars,
         Year >= minyear,
         Year <= maxyear,
         BoxOffice >= minboxoffice,
@@ -85,18 +84,6 @@ function(input, output, session) {
         src = "C:/Users/user/Documents/IMDB Movie Explorer/OIP.jpg",
         contentType = "image/jpg",
         alt = "Oscars"
-      ))
-    }else if (input$picture == "Boxoffice: A box office or ticket office is a place where tickets
-                          are sold to the public for admission to an event. 
-                          Box office business can be measured in the terms of the 
-                          number of tickets sold or the amount of money raised by 
-                          ticket sales (revenue). The projection and analysis of 
-                          these earnings is very important for the creative industries 
-                          and often a source of interest for fans.") {
-      return(list(
-        src = "C:/Users/user/Documents/IMDB Movie Explorer/220px-Ohio_Theatre_booth.jpg",
-        filetype = "image/jpg",
-        alt = "Boxoffice"
       ))
     }
   }, deleteFile = FALSE)
@@ -145,4 +132,3 @@ function(input, output, session) {
 
   output$n_movies <- renderText({ nrow(movies()) })
 }
-
