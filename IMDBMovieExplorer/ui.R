@@ -36,7 +36,7 @@ fluidPage(
       ),
       wellPanel(
         h4("Powered by:"),
-        tags$img(src = "Rstudio-ball.png", height = 50, length = 50),
+        tags$img(src = "https://raw.githubusercontent.com/amrlhqmii/IMDBMovieExplorer/main/image/RStudio-Ball.png", height = 50, length = 50),
       ),
     ),
     column(9,
@@ -48,7 +48,7 @@ fluidPage(
       ),
       wellPanel(
         h4("Oscars"),
-        tags$img(src = "Oscars.jpg", height = 300, length = 300),
+        tags$img(src = "https://raw.githubusercontent.com/amrlhqmii/IMDBMovieExplorer/main/image/Oscars.jpg", height = 300, length = 300),
         h5("The Academy Awards, popularly known as the Oscars, 
           are awards for artistic and technical merit in the film industry. 
           They are regarded by many as the most prestigious and significant 
