@@ -81,7 +81,7 @@ function(input, output, session) {
           They are regarded by many as the most prestigious and significant 
           awards in the entertainment industry worldwide.") {
       return(list(
-        src = "C:/Users/user/Documents/IMDB Movie Explorer/OIP.jpg",
+        src = "image/Oscars.jpg",
         contentType = "image/jpg",
         alt = "Oscars"
       ))
