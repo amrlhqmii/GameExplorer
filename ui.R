@@ -9,7 +9,7 @@ actionLink <- function(inputId, ...) {
 }
 
 fluidPage(
-  titlePanel("OMDB Movie Explorer"),
+  titlePanel("IMDB Movie Explorer"),
   fluidRow(
     column(3,
       wellPanel(
