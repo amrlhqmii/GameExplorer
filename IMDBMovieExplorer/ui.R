@@ -13,7 +13,7 @@ fluidPage(
   fluidRow(
     column(3,
       wellPanel(
-        h4("What type of movie you want to explore?"),
+        h3("What type of movie do you want to explore?"),
         selectInput("genre", "Genre (a movie can have multiple genres)",
                     c("All", "Action", "Adventure", "Animation", "Biography", "Comedy",
                       "Crime", "Documentary", "Drama", "Family", "Fantasy", "History",
@@ -35,12 +35,8 @@ fluidPage(
         selectInput("yvar", "Y-axis variable", axis_vars, selected = "Reviews"),
       ),
       wellPanel(
-        radioButtons("picture", "Movie's common thing:",
-                     c("Oscars: The Academy Awards, popularly known as the Oscars, 
-          are awards for artistic and technical merit in the film industry. 
-          They are regarded by many as the most prestigious and significant 
-          awards in the entertainment industry worldwide."),
-          ),
+        h4("Powered by:"),
+        tags$img(src = "Rstudio-ball.png", height = 50, length = 50),
       ),
     ),
     column(9,
@@ -48,10 +44,15 @@ fluidPage(
       wellPanel(
         span("Number of movies selected:",
           textOutput("n_movies")
-        )
+        ),
       ),
       wellPanel(
-      imageOutput("image")
-    ))
+        h4("Oscars"),
+        tags$img(src = "Oscars.jpg", height = 300, length = 300),
+        h5("The Academy Awards, popularly known as the Oscars, 
+          are awards for artistic and technical merit in the film industry. 
+          They are regarded by many as the most prestigious and significant 
+          awards in the entertainment industry worldwide."),
+      ),)
   )
 )
