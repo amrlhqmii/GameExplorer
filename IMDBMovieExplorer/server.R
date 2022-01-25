@@ -71,22 +71,6 @@ function(input, output, session) {
     m$has_oscar[m$Oscars >= 1] <- "Yes"
     m
   })
-  
-  output$image <- renderImage({
-    if (is.null(input$picture))
-      return(NULL)
-    
-    if (input$picture == "Oscars: The Academy Awards, popularly known as the Oscars, 
-          are awards for artistic and technical merit in the film industry. 
-          They are regarded by many as the most prestigious and significant 
-          awards in the entertainment industry worldwide.") {
-      return(list(
-        src = "image/Oscars.jpg",
-        contentType = "image/jpg",
-        alt = "Oscars"
-      ))
-    }
-  }, deleteFile = FALSE)
 
   # Function for generating tooltip text
   movie_tooltip <- function(x) {
